@@ -4,6 +4,9 @@ Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
 ``` bash
+#Live Website
+https://activity1-6-1-12-combined-output.vercel.app/
+
 # Install dependencies (only the first time)
 npm install
 
