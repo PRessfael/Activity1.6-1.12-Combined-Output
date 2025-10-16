@@ -71,7 +71,7 @@ fontLoader.load(
 /**
  * Earth Object
  */
-const geometry = new THREE.SphereGeometry(1, 32, 32)
+const geometry = new THREE.SphereGeometry(1, 99, 99)
 const material = new THREE.MeshStandardMaterial({
     map: earthTexture,
     color: parameters.color
@@ -83,6 +83,23 @@ scene.add(mesh)
 const light = new THREE.DirectionalLight(0xffffff, 1.3)
 light.position.set(5, 1, 5)
 scene.add(light)
+
+const starGeometry = new THREE.SphereGeometry(0.05, 8, 8)
+const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff })
+
+for (let i = 0; i < 450; i++) {
+    const star = new THREE.Mesh(starGeometry, starMaterial)
+
+    star.position.x = (Math.random() - 0.5) * 100
+    star.position.y = (Math.random() - 0.5) * 100
+    star.position.z = (Math.random() - 0.5) * 100
+
+    const scale = Math.random() * 0.5
+    star.scale.set(scale, scale, scale)
+
+    scene.add(star)
+}
+
 
 /**
  * Sizes
